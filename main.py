@@ -4,9 +4,12 @@ from entities.inventory import *
 from entities.place import *
 from entities.item import *
 from entities.npc import *
+from entities.capacity import *
+from entities.level import *
 
 from factory import datafactory
 from factory import placefactory
+from factory import npcfactory
 
 from rich.pretty import pprint
 
@@ -22,14 +25,20 @@ def showMainBoard():
     selection = input('Choisis une action: ')
 
 #showMainBoard()
-placefactory.loadAllStoredPlace()
+npcfactory.loadAllStoredNpc()
 
-placefactory.createNewPlace("hub", [], ["Escalier1", "Escalier2", "Salle Ytrack"])
-placefactory.createNewPlace("Escalier1", [], [])
-placefactory.createNewPlace("Escalier2", [], [])
-place1 = placefactory.createNewPlace("Salle Ytrack", [], [])
+npcfactory.createNewNpc('Alred le gonz', 100, "oué")
 
-placefactory.saveAllCachedPlace()
+npcfactory.saveAllCachedNpc()
 
+print(npcfactory.getNpcFromName('Alred le gonz'))
 
-print(placefactory.getPlaceFromName("acceuil"))
+level = Level()
+level.name = "B1"
+level.option = "RIEN DU TOUT"
+
+capacity1 = Capacity()
+capacity1.name = "Hello world"
+capacity1.damage = 100
+
+datafactory.saveJsonObject(level.name+".json", level)
