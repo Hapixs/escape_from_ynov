@@ -1,0 +1,13 @@
+{
+    "name": "espace_echange",
+    "npcs": [],
+    "connected_places": [
+        "portique",
+        "escalier_1",
+        "escalier_2",
+        "escalier_3",
+        "escalier_4",
+        "escalier_5",
+        "escalier_6"
+    ]
+}

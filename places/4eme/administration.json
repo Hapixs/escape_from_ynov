@@ -1,0 +1,10 @@
+{
+    "name": "administration",
+    "npcs": [],
+    "connected_places": [
+        "ascenceur",
+        "escalier_1",
+        "escalier_2",
+        "escalier_7"
+    ]
+}

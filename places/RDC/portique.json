@@ -1,0 +1,8 @@
+{
+    "name": "portique",
+    "npcs": [],
+    "connected_places": [
+        "entre",
+        "espace_echange"
+    ]
+}

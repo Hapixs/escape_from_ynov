@@ -1,0 +1,7 @@
+{
+    "name": "salle_robotique",
+    "npcs": [],
+    "connected_places": [
+        "couloir_3eme"
+    ]
+}

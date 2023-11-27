@@ -1,0 +1,13 @@
+{
+    "name": "couloir_2eme",
+    "npcs": [],
+    "connected_places": [
+        "salle_ytrack",
+        "salle_206",
+        "salle_archive",
+        "escalier_1",
+        "escalier_2",
+        "escalier_3",
+        "escalier_4"
+    ]
+}

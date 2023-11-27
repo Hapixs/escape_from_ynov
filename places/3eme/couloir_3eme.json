@@ -1,0 +1,13 @@
+{
+    "name": "couloir_3eme",
+    "npcs": [],
+    "connected_places": [
+        "souk",
+        "salle_robotique",
+        "box",
+        "escalier_1",
+        "escalier_2",
+        "escalier_3",
+        "escalier_7"
+    ]
+}

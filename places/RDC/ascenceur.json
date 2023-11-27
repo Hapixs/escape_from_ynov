@@ -1,0 +1,8 @@
+{
+    "name": "ascenceur",
+    "npcs": [],
+    "connected_places": [
+        "entre",
+        "adminitration"
+    ]
+}

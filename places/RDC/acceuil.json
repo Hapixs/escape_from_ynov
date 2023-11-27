@@ -2,7 +2,6 @@
     "name": "acceuil",
     "npcs": [],
     "connected_places": [
-        "Escalier2",
-        "Salle Ytrack"
+        "entre"
     ]
 }

@@ -1,0 +1,16 @@
+{
+    "name": "couloir_1er",
+    "npcs": [],
+    "connected_places": [
+        "salle_serveur",
+        "salle_102",
+        "salle_105",
+        "salle_108",
+        "escalier_1",
+        "escalier_2",
+        "escalier_3",
+        "escalier_4",
+        "escalier_5",
+        "escalier_6"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "name": "escalier_7",
+    "npcs": [],
+    "connected_places": [
+        "couloir_3eme",
+        "administration"
+    ]
+}

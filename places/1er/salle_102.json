@@ -1,0 +1,7 @@
+{
+    "name": "salle_102",
+    "npcs": [],
+    "connected_places": [
+        "couloir_1er"
+    ]
+}

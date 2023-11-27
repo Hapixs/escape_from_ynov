@@ -1,0 +1,10 @@
+{
+    "name": "escalier_3",
+    "npcs": [],
+    "connected_places": [
+        "espace_echange",
+        "couloir_1er",
+        "couloir_2eme",
+        "couloir_3eme"
+    ]
+}

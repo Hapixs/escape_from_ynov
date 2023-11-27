@@ -1,9 +1,0 @@
-{
-    "name": "hub",
-    "npcs": [],
-    "connected_places": [
-        "Escalier1",
-        "Escalier2",
-        "Salle Ytrack"
-    ]
-}

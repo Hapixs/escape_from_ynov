@@ -1,0 +1,10 @@
+{
+    "name": "entre",
+    "npcs": [],
+    "connected_places": [
+        "hub",
+        "ascenceur",
+        "acceuil",
+        "portique"
+    ]
+}
