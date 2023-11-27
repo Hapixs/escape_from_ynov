@@ -5,13 +5,14 @@ import os
 
 places = {}
 def loadAllStoredPlace():
-        for x in os.listdir("./places"):
-            place = datafactory.loadJsonObject(x, "./places", Place())
+        folderPath = datafactory._defineFolderFromObject(Place())
+        for x in os.listdir(folderPath):
+            place = datafactory.loadJsonObject(x, Place())
             places[place.name] = place
 
 def saveAllCachedPlace():
     for x in places.values():
-        datafactory.saveJsonObject(x.name+".json", "./places", x)
+        datafactory.saveJsonObject(x.name+".json", x)
 
 def createNewPlace(name, npcs, connected_places):
     place = Place()
