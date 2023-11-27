@@ -27,8 +27,9 @@ placefactory.loadAllStoredPlace()
 placefactory.createNewPlace("hub", [], ["Escalier1", "Escalier2", "Salle Ytrack"])
 placefactory.createNewPlace("Escalier1", [], [])
 placefactory.createNewPlace("Escalier2", [], [])
-placefactory.createNewPlace("Salle Ytrack", [], [])
+place1 = placefactory.createNewPlace("Salle Ytrack", [], [])
 
 placefactory.saveAllCachedPlace()
+
 
 print(placefactory.getPlaceFromName("acceuil"))
