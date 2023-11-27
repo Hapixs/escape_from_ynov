@@ -1,0 +1,12 @@
+{
+    "username": "Hapixs",
+    "health": 100,
+    "healthMax": 100,
+    "stamina": 100,
+    "staminaMax": 100,
+    "inventory": "{\"content\": [\"{\\\"durabilityMax\\\": 13, \\\"durability\\\": 0, \\\"name\\\": \\\"Djellaba de Salime\\\"}\", \"{\\\"durabilityMax\\\": 2, \\\"durability\\\": 0, \\\"name\\\": \\\"D\\\\u00e8 rose de Cl\\\\u00e9mence\\\"}\", \"{\\\"durabilityMax\\\": -1, \\\"durability\\\": 0, \\\"name\\\": \\\"Clavier de l\\\\u00e9o\\\"}\"]}",
+    "sex": "Helicopter",
+    "money": 0,
+    "level": 0,
+    "place": "{\"name\": \"Hub\", \"npcs\": [\"{\\\"name\\\": \\\"Pedro\\\", \\\"healthMax\\\": 100}\"]}"
+}
