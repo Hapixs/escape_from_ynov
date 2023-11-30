@@ -36,9 +36,12 @@ print(npcfactory.getNpcFromName('Alred le gonz'))
 level = Level()
 level.name = "B1"
 level.option = "RIEN DU TOUT"
+level.capacity = []
 
 capacity1 = Capacity()
 capacity1.name = "Hello world"
 capacity1.damage = 100
+
+level.capacity = [capacity1]
 
 datafactory.saveJsonObject(level.name+".json", level)

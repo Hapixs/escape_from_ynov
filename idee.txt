@@ -1,0 +1,45 @@
+salle serveur maxance : ram ✓
+switch derriere machine a cafe : acces illimiter au cafe et a la nouriture (sans €) ✓
+salle ytrack : souris gaming oublier ✓
+salle archi : pc gaming a 10k ✓
+salle robotique : chargeur pc ✓
+salle leo : clavier mécanique externe ✓
+
+$$$$$
+racketter des B1
+poubelles
+rendre ses tps (salle ytrack) ✓
+
+
+
+easter egg:
+
+samy : donne un pc de class superieur ✓
+alexandre : donne un pc plus efficace pour hack ✓
+clemence : donne un dé tricher ✓
+salim : dellaba d'invisibilité (peut se cacher n'importe ou) ✓
+
+
+devoir charger son pc sur une alim du souk tant qu'on a pas récuperer chargeur
+
+carte machine a cafe et distributeur
+carte salle
+carte ascenseur 
+carte portique
+
+achat de pc dans la salle hardware
+
+possibilité de choisir une spé:
+-cyber : faciliter pour hacker certain truc
+-hardware : promo pour acheter pc et meilleur matos
+-web : indice tous les jours
+-robotique : detecteur pour savoir dans quelle salle sera le prof
+-data ia : meilleur chance pour chaque lancer de dé
+
+capaciter (attaque)
+energie
+vie (moral)
+xp 
+niveau (b1,...)
+
+nuit possibilité de ce cacher

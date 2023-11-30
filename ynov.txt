@@ -1,0 +1,161 @@
+on commence a l'entre ynov : 4 choix possibles
+- aller devant le hub 
+	porte fermer besoin carte
+
+- aller devant l'ascenceur
+ 	impossible y aller besoin carte 
+
+- aller parler un mec de l'accueil 
+	possibiliter de passer un test avec lui pour avoir une chance sur 3 de rentré
+
+- aller au portique
+	possibiliter d'essayer de passer 1/25 de passer
+ 
+
+après avoir passer le portique: 7 choix possibles
+
+- choix entre 6 escaliers
+	possibiliter aller au : - RDC  (ou on est)
+				- 1er  (ouvert)
+				- 2eme (impossible d'y aller)
+				- 3eme (impossible d'y aller)
+				- 4eme (impossible d'y aller) 
+
+- choix cacher d'aller dans la salle d'archi pour il y a un pc a 10k
+
+
+arrivée au 1ère etg : 4 choix possibles
+
+- aller dans la salle serveur
+	si spé cyber : acceder aux cameras
+	récuperer une ram
+	sinon complications au niveau de l'acces
+	
+- aller dans la salle 102
+	possibilité de demonter pc pour voler des composant pour hardware
+	clemence : donne un dé tricher
+
+- aller dans la salle 105
+	possibilité de combat avec un mentor pour acceder au 2eme etg
+
+- aller dans la salle 108
+	npc pour monter en competence
+	alexandre : donne un pc plus efficace pour hack
+
+
+apres avoir battu le mentor : 
+
+- choix entre 6 escaliers
+	possibiliter aller au : - RDC  (ouvert)
+				- 1er  (ou on est)
+				- 2eme (ouvert)
+				- 3eme (impossible d'y aller)
+				- 4eme (impossible d'y aller) 
+
+arrivée au 2eme etg : 3 choix possibles
+
+- aller dans la salle ytrack
+	possibilité de rendre devoir $$ / reussir piscine go
+	croiser samy : donne un pc de class superieur
+	possibilité de trouver une souris gaming oublier 
+	possibilité de parler a plusieur npc pour finir 4 projet go (3 morceaux par projets donc 12 npc)
+
+- aller dans la salle leo
+	récuperer le clavier mécanique externe apres test
+	possibilité de monter en compétence en repondant a des test
+
+- aller dans la salle archive 
+	echanger materiel contre argent
+	achat materiel
+
+
+apres avoir fini la piscine go : 
+
+- choix entre 6 escaliers
+	possibiliter aller au : - RDC  (ouvert)
+				- 1er  (ouvert)
+				- 2eme (ou on est)
+				- 3eme (ouvert)
+				- 4eme (impossible d'y aller) 
+
+arrivée au 3eme etg : 3 choix possibles
+
+-aller dans le souk 
+	npc partout pour monter en competence 
+	achat cafe / nourriture distributeur
+	switch derriere machine a cafe : acces illimiter au cafe et a la nouriture (sans €)
+	salim : dellaba d'invisibilité (peut se cacher n'importe ou)
+	devoir charger son pc sur une alim du souk tant qu'on a pas récuperer chargeur
+
+
+-aller dans la salle robotique
+	possibilité de voler un chargeur pc 
+
+-aller dans un box 
+	entretient avec ton referent
+
+possibilité d'aller a l'ascenceur au rdc et donner accès au 4eme
+
+	- aller voir le directeur 
+		combat
+
+quand combat gagner récupère clé pour accèder salle prof python
+
+prof python possible entre 4 salles
+
+une fois dans salle combat contre lui 
+
+	- si combat réussi, gg ta ton diplome ynov
+
+	- si combat perdu, tu aurais du verifier les photos de plante de ta galerie
+	
+
+quand c'est la nuit il y a gardien qui tourne 
+	se cacher sinon retour au niveau en dessous
+
+
+COMBAT :
+
+b1 → "Hello World!" 3pts 
+     piscine golang 4pts
+
+b2 → "cat file.txt" 3pts
+     "git push" 5pts
+
+b3 ⇒ "POO python" 3pts 
+      new VM 4pts
+   → hardware : cable hdmi 6pts
+   → robotique : arduino 6pts
+   → web : css 6pts
+   → cyber : nmap 6pts
+   → data IA : database 6pts
+
+m1 ⇒ "git branch" 4pts
+      eloquence 5pts
+   → hardware : cable hdmi 6pts
+   → robotique : arduino 6pts
+   → web : css 6pts
+   → cyber : nmap 6pts
+   → data IA : database 6pts
+     
+
+m2 ⇒ managment 5pts
+     jet de pc 5pts
+   → hardware : cable hdmi 6pts
+     		CPU 7pts
+   → robotique : arduino 6pts
+		 wall-e 7pts
+   → web : css 6pts
+	   html 7pts
+   → cyber : nmap 6pts
+	     hacking 7pts
+   → data IA : database 6pts
+	       chatgpt 7pts
+
+Class : Character, Etage rdc,1,2,3&4, Message, 
+
+
+
+	
+	
+
