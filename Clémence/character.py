@@ -1,9 +1,10 @@
 from dice import Dice
 import Level
 
+
 class Character:
 
-    def init(self, name: str, max_hp: int, max_stamina: int, dice: Dice, gender: str, inventory = [], money: int = 0, level: Level):
+    def init(self, name: str, max_hp: int, max_stamina: int, dice: Dice, gender: str, inventory = [], money: int = 0, level = Level()):
         self._name = name
         self._max_hp = max_hp
         self._current_hp = max_hp
@@ -41,7 +42,7 @@ class Character:
 
 
 
-if name == "main":
+if  __name__ == "main":
     Salim = Character("Salim", 100, 50, Dice(6), "un homme")
     Manon = Character("Manon", 100, 49, Dice(6), "Une femme")
     print(Salim)

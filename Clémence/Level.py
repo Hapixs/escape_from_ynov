@@ -1,16 +1,7 @@
-import character
-
-        
-class Attack :
-        
-    def __init__(self, name : str, pts : int):
-        self._name = name 
-        self._pts = pts
-        
-  
+import Attack
 class Level (Attack):
     
-    def __init__(self, level : str = "B1", option = None, attack = []):
+    def __init__(self, level = "B1", option : str = None, attack = []):
         self._level = level
         self._option = option
         self._attack : attack
