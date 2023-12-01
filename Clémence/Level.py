@@ -10,27 +10,27 @@ class Attack :
   
 class Level (Attack):
     
-    def __init__(self, level : str = "B1", option = None):
+    def __init__(self, level : str = "B1", option = None, attack = []):
         self._level = level
         self._option = option
-        self._attack : Attack[]
+        self._attack : attack
         
     
 class B1 (Level):
         
-    def __init__(self, level = "B1",)
+    def __init__(self, level = "B1",):
         self._level = level
         self._attack= ("Hello World!", 2) + ("Piscine golang", 4)
         
 class B2 (Level):
         
-    def __init__(self, level = "B2",)
+    def __init__(self, level = "B2",):
         self._level = level
         self._attack = ("cat file.txt", 3) + ("git push",5)
             
 class B3 (Level):
         
-    def __init__(self, level = "B3", option = "Hardware")
+    def __init__(self, level = "B3", option = "Hardware"):
         self._level = level
         self._option = option
         self._attack = ("POO python", 3) + ("New VM", 3)
@@ -52,7 +52,7 @@ class B3 (Level):
                 
 class M1 (Level):
         
-    def __init__(self, level = "M1", option = "Hardware")
+    def __init__(self, level = "M1", option = "Hardware"):
         self._level = level
         self._option = option
         self._attack = ("git branch", 3) +( "Eloquence", 5)
@@ -74,7 +74,7 @@ class M1 (Level):
 
 class M2 (Level):
         
-    def __init__(self, level = "M2", option = "Hardware")
+    def __init__(self, level = "M2", option = "Hardware"):
         self._level = level
         self._option = option
         self._attack = ("Managment",4) + ("Jet de pc",4)
