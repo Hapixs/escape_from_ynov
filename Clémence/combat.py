@@ -1,4 +1,3 @@
-import os
 import character
 
 class Combat:
