@@ -39,7 +39,7 @@ class Etage:
         left = self.move_left()
         map_str = f"""
 Carte:
-{self.get_floor}
+{self.get_floor()}
 ┌──────────┐──────────┐──────────┐──────────┐
 │          │          │          │          │
 │   {self.get_room((0, 0))}   │   {self.get_room((0, 1))}   │   {self.get_room((0, 2))}   │   {self.get_room((0, 3))}   │
