@@ -4,7 +4,7 @@ from piece import Piece
 from prompting import prompting
 import time
 from character import Character
-from level import Level, B1,Python, Mentor, Accueil
+from level import B1 , Python, Mentor, Accueil
 from position import Position
 from event import Event
 

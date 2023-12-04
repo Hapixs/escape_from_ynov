@@ -24,10 +24,12 @@ un combat va pouvoir commencer :\n''')
                     prompting(f'''Vous avez choisi pour attaquer {self.character._level._attack[int(sel)-1]._name} avec {self.character._level._attack[int(sel)-1]._pts} points.
 Le combat va pouvoir commencer, a votre disposition il y a un dé\n''') 
                     self.attack(player=self.target, possible_choice_pts=self.character._level._attack[int(sel)-1]._pts)  
+                    self.target.show_HP()
                     rand = random.randint(0, len(self.target._level._attack))    
-                    prompting(f"{self.target._name} est contre vous avec {self.target._current_hp} hp\n")
+                    prompting(f"{self.target._name} attaque avec  {self.target._level._attack[rand]._name} qui fait {self.target._level._attack[rand]._pts} degat\n")
                     self.attack(player=self.character, possible_choice_pts=self.target._level._attack[rand]._pts)
-                    self.victoire(self.target)
+                    self.character.show_HP()
+        self.victoire(self.target)
 
     def decrease_health(self, target : Character, amount : int):
         target._current_hp -= amount
