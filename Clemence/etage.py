@@ -162,7 +162,7 @@ class Etage1(Etage):
     P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n", Event("P101", 2))
     P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
                  mais le mentor est contre pour 12min, vous engagez un combat avec un mentor ''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
-    P108 = Piece("P108")
+    P108 = Piece("P108", "Ici tu trouves npc pour monter en competence")
     Serveur = Piece("Serv")
     Esc1 = Piece("esc1")
 
