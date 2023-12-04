@@ -5,7 +5,7 @@ from prompting import prompting
 
 class Piece: 
 
-    def __init__(self, name : str, histoire = None, event = None, combat : Combat = None, enemy : Character = None):
+    def __init__(self, name : str, histoire : str = None, event : str = None, combat : Combat = None, enemy : Character = None):
          self._name = name
          self._histoire = histoire
          self._enemy = enemy
@@ -13,10 +13,13 @@ class Piece:
          self.event = event
 
 
-    def get_name(self):
+    def get_name(self,):
         return self._name
     
     def show_histoire(self):
+        if self._name == "Esc1":
+            prompting(self._histoire)
+            self.enter_room()
         if self._histoire != None:
             prompting(self._histoire)
             if self._combat != None:
