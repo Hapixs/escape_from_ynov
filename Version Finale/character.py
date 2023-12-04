@@ -16,6 +16,8 @@ class Character:
     def initiali(self):
         prompting(f"{self._name} est en {self._level._name} avec {self._current_hp} hp\n")
 
+    def show_HP(self):
+        print(f'{self._name} / PV [{"♥" * (self._current_hp)}{"♡" * (self._max_hp - self._current_hp)}] {self._current_hp}/{self._max_hp}')
 
     def is_alive(self):
         return self._current_hp > 0   
