@@ -139,10 +139,10 @@ Carte:
     
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n",enemy=Character("Eleve",50, 4,[], 0), combat=True) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve",50, 4,[], 0,  )) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
     Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', Character("Mec de l'accueil",50, 4,[], 0, Level() ))
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,[], 0, Level() ))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
@@ -159,8 +159,9 @@ Rendez-vous a l'étage superieur\n''' )
         
    
 class Etage1(Etage):
-    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware", Event("P101", 2))
-    P105 = Piece("P105")
+    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n", Event("P101", 2))
+    P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
+                 mais le mentor est contre pour 12min, vous engagez un combat avec un mentor ''', combat=True, enemy= Character("Costa", 60, 6, level = Mentor()) )
     P108 = Piece("P108")
     Serveur = Piece("Serv")
     Esc1 = Piece("esc1")

@@ -2,7 +2,6 @@ import os
 from combat import Combat
 from character import Character
 from prompting import prompting
-from level import B1
 
 class Piece: 
 
@@ -23,8 +22,7 @@ class Piece:
         if self._histoire != None:
             prompting(self._histoire)
             if self._combat != None:
-                perso = Character("salim", level=B1())
-                Combat(character=perso,target=self._enemy, room= self._name).start_attack()
+                self._combat.start_attack()
         else:
             prompting(f"Aucune histoire disponible pour la salle {self._name}.")
             

@@ -3,7 +3,7 @@ from prompting import prompting
 
 class Level ():
     
-    def __init__(self, name = "B1", option : str = None, attack = []):
+    def __init__(self, name = "B1", option : str = None, attack : Attack =[]):
         self._name = name
         self._option = option
         self._attack = attack
@@ -16,20 +16,20 @@ class B1 (Level):
         
     def __init__(self, name = "B1"):
         self._name = name
-        self._attack= [Attack("Hello World!", 2),Attack("Piscine golang", 4)]
+        self._attack= ("Hello World!", 2) + ("Piscine golang", 4)
         
 class B2 (Level):
         
     def __init__(self, name = "B2"):
         self._name = name
-        self._attack = [Attack("cat file.txt", 3),Attack("git push",5)]
+        self._attack = ("cat file.txt", 3) + ("git push",5)
             
 class B3 (Level):
         
     def __init__(self, name = "B3", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("POO python", 3),Attack("New VM", 3)]
+        self._attack = ("POO python", 3) + ("New VM", 3)
         
         
     def setAttack(self):
@@ -51,7 +51,7 @@ class M1 (Level):
     def __init__(self, name = "M1", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("git branch", 3),Attack("Eloquence", 5)]
+        self._attack = ("git branch", 3) +( "Eloquence", 5)
         
         
     def setAttack(self):
@@ -73,7 +73,7 @@ class M2 (Level):
     def __init__(self, name = "M2", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("Managment",4),Attack("Jet de pc",4)]
+        self._attack = ("Managment",4) + ("Jet de pc",4)
         
             
     def setAttack(self):
@@ -94,14 +94,14 @@ class Python (Level):
     
     def __init__(self,name="Prof de Python"):
         self._name = name
-        self._attack = [Attack("Anti Chatgpt",10),Attack("Projet POO",10)]
+        self._attack = ("Anti Chatgpt",10) + ("Projet POO",10)
     
 
 class Accueil (Level):
     
     def __init__(self,name="Mec de Accueil"):
         self._name = name
-        self._attack = [Attack("Passe ton badge",2),Attack("Aigri mood",4)]
+        self._attack = ("Passe ton badge",2) + ("Aigri mood",4)
         
 
     
