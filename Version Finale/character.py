@@ -1,10 +1,10 @@
-from level import B1
+from level import Level
 from prompting import prompting
 
 
 class Character:
     
-    def __init__(self, name: str, max_hp: int = 100 , dice= 6, inventory = [], money: int = 0, level = B1()):
+    def __init__(self, name: str, max_hp: int = 100 , dice= 6, inventory = [], money: int = 0, level = Level()):
         self._name = name
         self._max_hp = max_hp
         self._current_hp = max_hp

@@ -143,10 +143,10 @@ Carte:
     
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve",50, 4, Python())) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve",50, 4, level=Python())) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
     Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,Accueil() ))
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil() ))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
