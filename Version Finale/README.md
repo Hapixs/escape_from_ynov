@@ -33,9 +33,9 @@ Les contraintes rencontrées lors de la conception de ces objectifs sont nombreu
 
 ### Déroulement du jeu
 
-Pour démarrer le jeu, il faut se rendre sur le terminal en se placant dans le dossier escape_from_ynov puis utiliser la commande
+Pour démarrer le jeu, il faut se rendre sur le terminal en se placant dans le dossier escape_from_ynov/Version Finale puis utiliser la commande
 ```powershell 
-main.py
+python main.py
 ```
 Ainsi le jeu commence, tout d'abord par une petite introduction. Ensuite on eut choisir le nom du personnage avant de se retrouver dans la salle Home.
 A partir de la, on peut voir des directions a choisir avec une cartes au dessus.
