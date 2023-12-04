@@ -21,10 +21,3 @@ class RiggedDice(Dice):
         
         #return self._faces if rigged else super().roll()
     
-
-
-    
-if __name__ == "__main__":
-    a_dice = RiggedDice(6)
-    for _ in range(10):
-        print(a_dice.roll(False))

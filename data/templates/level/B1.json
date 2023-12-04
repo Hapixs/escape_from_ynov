@@ -1,7 +1,6 @@
 {
     "name": "B1",
     "option": "RIEN DU TOUT",
-    "capacity": [
-        "<entities.capacity.Capacity object at 0x0000023AEF060C50>"
+    "capacity": [("Hello World!", 2), (("Piscine golang", 4))
     ]
 }

@@ -1,7 +1,7 @@
-import Attack
-class Level (Attack):
+from attack import Attack
+class Level ():
     
-    def __init__(self, level = "B1", option : str = None, attack = []):
+    def __init__(self, level = "B1", option : str = None, attack : Attack =[]):
         self._level = level
         self._option = option
         self._attack : attack
@@ -29,15 +29,15 @@ class B3 (Level):
         
     def setAttack(self):
         if self._option == "Hardware" :
-            self._attack += ("Cable hdmi", 5)
+            self._attack.append("Cable hdmi", 5)
         elif self._option == "Robotique" : 
-            self._attack += ("Arduino", 5)
+            self._attack.append("Arduino", 5)
         elif self._option == "Web" :
-            self._attack += ("css", 5)
+            self._attack.append("css", 5)
         elif self._options == "Cyber" :
-            self._attack += ("nmap", 5)
+            self._attack.append("nmap", 5)
         elif self._options == "Data IA" :
-            self._attack += ("Database", 5)
+            self._attack.append("Database", 5)
         else :  
             print("Choisit une option")
                 
@@ -51,15 +51,15 @@ class M1 (Level):
         
     def setAttack(self):
         if self._options == "Hardware" :
-            self._attack += ("Cable hdmi", 6)
+            self._attack.append("Cable hdmi", 6)
         elif self._options == "Robotique" :
-            self._attack +=( "Arduino", 6)
+            self._attack.append( "Arduino", 6)
         elif self._options == "Web" :
-            self._attack += ("css", 6)
+            self._attack.append("css", 6)
         elif self._options == "Cyber" :
-            self._attack += ("nmap", 6)
+            self._attack.append("nmap", 6)
         elif self._options == "Data IA" :
-            self._attack += ("Database", 6)
+            self._attack.append("Database", 6)
         else :
             print("Choisit une option")
 
@@ -73,15 +73,15 @@ class M2 (Level):
             
     def setAttack(self):
         if self._options == "Hardware" :
-            self._attack += ("Cable hdmi", 6) + ("CPU", 8)
+            self._attack.append(("Cable hdmi", 6), ("CPU", 8))
         elif self._options == "Robotique" :
-            self._attack += ("Arduino" , 6)+ ("Wall-e", 8)
+            self._attack.append(("Arduino" , 6), ("Wall-e", 8))
         elif self._options == "Web" :
-            self._attack += ("css",6) + ("html", 8)
+            self._attack.append(("css",6),("html", 8))
         elif self._options == "Cyber" :
-            self._attack += ("nmap",6) + ("Hacking", 8)
+            self._attack.append(("nmap",6),("Hacking", 8))
         elif self._options == "Data IA" :
-            self._attack += ("Database",6) + ("Chatgpt", 8)
+            self._attack.append(("Database",6),("Chatgpt", 8))
         else :
             print("Choisit une option")
                 
