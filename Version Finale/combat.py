@@ -25,9 +25,9 @@ un combat va pouvoir commencer :\n''')
 Le combat va pouvoir commencer, a votre disposition il y a un dé\n''') 
                     self.attack(player=self.target, possible_choice_pts=self.character._level._attack[int(sel)-1]._pts)  
                     rand = random.randint(0, len(self.target._level._attack))    
-                    # message advaisaire attack
+                    prompting(f"{self.target._name} est contre vous avec {self.target._current_hp} hp\n")
                     self.attack(player=self.character, possible_choice_pts=self.target._level._attack[rand]._pts)
-        # appelle methode victoire 
+                    self.victoire(self.target)
 
     def decrease_health(self, target : Character, amount : int):
         target._current_hp -= amount
@@ -42,4 +42,6 @@ Le combat va pouvoir commencer, a votre disposition il y a un dé\n''')
         prompting(f"La puissance de l'attaque sera de {roll} + {possible_choice_pts} soit {attack_value} points\n") 
         self.decrease_health(player, amount=attack_value)
 
-    #def methode victoire 
+    def victoire(self, target : Character):
+        if not target.is_alive() :
+            prompting(f"Félicitation! Victoire contre {self.target._name}\n ")
