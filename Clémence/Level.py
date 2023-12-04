@@ -12,13 +12,13 @@ class Level ():
     
 class B1 (Level):
         
-    def __init__(self, name = "B1",):
+    def __init__(self, name = "B1"):
         self._name = name
         self._attack= ("Hello World!", 2) + ("Piscine golang", 4)
         
 class B2 (Level):
         
-    def __init__(self, name = "B2",):
+    def __init__(self, name = "B2"):
         self._name = name
         self._attack = ("cat file.txt", 3) + ("git push",5)
             
@@ -88,7 +88,19 @@ class M2 (Level):
         else :
             print("Choisit une option")
             
-            
+class Python (Level):
+    
+    def __init__(self,name="Prof de Python"):
+        self._name = name
+        self._attack = ("Anti Chatgpt",10) + ("Projet POO",10)
+    
+
+class Accueil (Level):
+    
+    def __init__(self,name="Mec de Accueil"):
+        self._name = name
+        self._attack = ("Passe ton badge",2) + ("Aigri mood",4)
+    
 
             
             

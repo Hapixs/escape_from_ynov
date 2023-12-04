@@ -6,6 +6,7 @@ import time
 from character import Character
 from level import Level
 from position import Position
+from event import Event
 
 
 class Etage: 
@@ -146,8 +147,7 @@ allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', Character("
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
     Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
-pour cela il faut y être autorisé
-Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''' )
+Rendez-vous a l'étage superieur\n''' )
 
         
     def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur, Accueil, None,Esc1],
@@ -159,7 +159,7 @@ Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''' )
         
    
 class Etage1(Etage):
-    P101= Piece("P101")
+    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware", Event("P101", 2))
     P105 = Piece("P105")
     P108 = Piece("P108")
     Serveur = Piece("Serv")
