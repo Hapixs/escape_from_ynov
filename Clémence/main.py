@@ -8,6 +8,7 @@ from etage import EtageRDC, Etage1, Etage2, Etage3, Etage4
 from histoire import Histoire
 from level import Level
 from piece import Piece
+from prompting import prompting
 
 from rich.pretty import pprint
 
@@ -17,14 +18,14 @@ if __name__ == "__main__":
     clear()
     with open("./sprites/GAME_NAME.txt", 'r') as f:
         print(f.read())
-    joueur = Character()
+
     mon_etage = EtageRDC()
-    print('''Bienvenue dans Ynov Campus, 
-          pour commencer cette première année il faut d'abord choisir son nom :'''
-    )
-    joueur._name = input("pour commencer cette première année il faut d'abord choisir son nom :")
-    joueur.__str__()
-    print('''L'année va pouvoir commencer, ne pas oublier l'objectif, progresser pour vaincre le boss de Python''')
+    prompting("\nBienvenue dans Ynov Campus, une nouvelle aventure pour vous ")
+    prompting("\nPour commencer cette première année il faut d'abord choisir son nom :")
+    name = input()
+    joueur = Character(name)
+    joueur.initiali()
+    prompting('''L'année va pouvoir commencer, ne pas oublier l'objectif, progresser pour vaincre le boss de Python\n\n''')
     mon_etage.possible_move()
     while (joueur.is_alive):
         if mon_etage.get_nbr() == 0:

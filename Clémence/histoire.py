@@ -1,12 +1,11 @@
 
-from character import Character
 
 class Histoire():
     
-    def __init__(self, nameroom : str, Character = Character()) -> None:
+    def __init__(self, nameroom : str, name) -> None:
         self._nameroom = nameroom
-        self._name = Character
+        self._name = name
         
-    def __str__(self) -> str:
+    def show(self) -> str:
         print(f"{self._name} est dans {self._nameroom}")
 

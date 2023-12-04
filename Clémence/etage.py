@@ -1,16 +1,11 @@
 
 from typing import Any
 from piece import Piece 
+from prompting import prompting
+import time
 
-class Position: 
-    
-    def __init__(self, x =1, y=1):
-        self.x = x
-        self.y = y
-        
-    
 class Etage: 
-    def __init__(self,name,  nbr, template : Piece =[], position = Position()  ): 
+    def __init__(self,name,  nbr, template : Piece =[], position = (1,1) ) -> None: 
         self._name = name
         self._nbr = nbr
         self._template = template
@@ -18,15 +13,16 @@ class Etage:
 
         
     def show_position(self): 
-        print(f"Position actuelle: {self._position}") 
+        print(f"Position actuelle: {self._position}\n") 
         print(self._template) 
         print(self._template[self._position[0]][self._position[1]]) 
 
     def get_nbr(self):
         return self._nbr
+    
+    def get_floor(self):
+        return self._name
      
-    def get_position(self):
-        return self._position
         
     def get_room(self, pos):
         # print(pos)
@@ -69,8 +65,8 @@ Carte:
         possible_choice = []
         choix = ""
         while choix not in possible_choice:
-            print(f"Vous etes dans la salle :{self.get_room(self._position)}")
-            print("Déplacements possibles :")
+            prompting(f"Vous etes dans la salle :{self.get_room(self._position)}\n")
+            prompting("Déplacements possibles :\n")
             disable_room = ["", None]
             i = 1
             if not self.get_room(up) in disable_room:
@@ -93,8 +89,10 @@ Carte:
                 possible_choice.append(str(i))
                 i += 1
                 enable_room.append(left)
-            choix = input("Quel est votre choix ? ")
-        print(f"Votre choix: {self.get_room(enable_room[int(choix) - 1])}")
+            prompting("Quel est votre choix ? ")
+            choix = input()
+        prompting(f"Votre choix: {self.get_room(enable_room[int(choix) - 1])}\n")
+        time.sleep(1)
         self._position = enable_room[int(choix) - 1]
         self.get_room(self._position).enter_room()
 
@@ -127,19 +125,26 @@ Carte:
             return (self._position[0], self._position[1] - 1)
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ") 
-    Ascenceur= Piece("Asce")
-    Accueil = Piece("Accu")
-    Home = Piece("Home")
-    Portiques = Piece("Port")
-    Esc1 = Piece("esc1")
-    Esc2 = Piece("esc2")
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut \n") 
+    Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
+    Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''')
+    Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
+    Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
+ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''')
+    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
+pour cela il faut y être autorisé
+Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
+    Esc2 = Piece("esc2", '''Les escalier 1 permettent d'aller a tous les étages
+pour cela il faut y être autorisé
+Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
         
     def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur,Esc1, Accueil ,None],
-                     [Hub,Home,Esc2, Portiques]), position = Position(1,1)):
-        super()._template = template
-        super()._name = name
-        super()._nbr = nbr
+                     [Hub,Home,Esc2, Portiques]),position = (1,1) ):
+        self._template = template
+        self._name = name
+        self._nbr = nbr
+        self._position = position
         
 class Etage1(Etage):
     P101= Piece("P101")
@@ -151,9 +156,9 @@ class Etage1(Etage):
         
     def __init__(self, name = "Etage 1", nbr = 1, template = ([P101,Esc1, None ,P105],
                      [None,Serveur,Esc2, P108])):
-        super()._template = template
-        super()._name = name
-        super()._nbr = nbr
+        self._template = template
+        self._name = name
+        self._nbr = nbr
         
 class Etage2(Etage):
     Archi= Piece("Arch")
@@ -165,9 +170,9 @@ class Etage2(Etage):
         
     def __init__(self, name = " Etage 2", nbr = 2, template = ([Archi,Esc1, None ,Leo],
                      [wc,None,Esc2, Ytrack])):
-        super()._template = template
-        super()._name = name
-        super()._nbr = nbr
+        self._template = template
+        self._name = name
+        self._nbr = nbr
 
 class Etage3(Etage):
     Ascenceur= Piece("Asce")
@@ -179,9 +184,9 @@ class Etage3(Etage):
         
     def __init__(self, name = "Etage 3", nbr = 3, template = ([Ascenceur,Esc1, Accueil ,None],
                      [None,Home,Esc2, Portiques])):
-        super()._template = template
-        super()._name = name
-        super()._nbr = nbr
+        self._template = template
+        self._name = name
+        self._nbr = nbr
         
 class Etage4(Etage):
     Ascenceur= Piece("Asce")
@@ -193,10 +198,6 @@ class Etage4(Etage):
         
     def __init__(self, name = "Etage 4", nbr = 4, template = ([Ascenceur,Esc1, Accueil ,None],
                      [None,Home,Esc2, Portiques]) ):
-        super()._template = template
-        super()._name = name
-        super()._nbr = nbr
-        
-        
-mon_etage = EtageRDC
-print(f"{mon_etage.get_position(mon_etage)}")
+        self._template = template
+        self._name = name
+        self._nbr = nbr
