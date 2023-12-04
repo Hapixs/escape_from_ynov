@@ -1,7 +1,7 @@
 from attack import Attack
 class Level ():
     
-    def __init__(self, name = "B1", option : str = None, attack : Attack =[]):
+    def __init__(self, name = "B1", option : str = None, attack = []):
         self._name = name
         self._option = option
         self._attack = attack
@@ -14,7 +14,7 @@ class B1 (Level):
         
     def __init__(self, name = "B1",):
         self._name = name
-        self._attack= ("Hello World!", 2) + ("Piscine golang", 4)
+        self._attack= [Attack("Hello World!", 2),Attack("Piscine golang", 4)]
         
 class B2 (Level):
         

@@ -128,7 +128,7 @@ Carte:
             return (self._position[0], self._position[1] - 1)
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", Character("Eleve",50, 4,[], 0, Level() )) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n",enemy=Character("Eleve",50, 4,[], 0), combat=True) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
     Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
 allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', Character("Mec de l'accueil",50, 4,[], 0, Level() ))
@@ -138,7 +138,7 @@ ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''')
     Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
 pour cela il faut y être autorisé
 Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''' )
-    Esc2 = Piece("esc2", '''Les escalier 1 permettent d'aller a tous les étages
+    Esc2 = Piece("esc2", '''Les escalier 2 permettent d'aller a tous les étages
 pour cela il faut y être autorisé
 Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
         
