@@ -12,10 +12,6 @@ class Piece:
          self._combat = combat
          self.event = event
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ab849ed4afc0a8bfb05d39ad4c6873ad54c1594b
     def __str__(self) -> str:
         return self._name
     
@@ -30,12 +26,6 @@ class Piece:
         else:
             prompting(f"Aucune histoire disponible pour la salle {self._name}.")
             
-        
-
-    
-
     def enter_room(self):
         os.system("clear||cls")
         self.show_histoire()
-        # self.start_combat()
-        

@@ -7,9 +7,9 @@ class Event:
         
     def action(self):
         if self.event_type == 0:
-            pick("20$")
+            self.pick("20$")
         elif self.event_type == 1:
-            pick("40 hp")
+            self.pick("40 hp")
     
     def pick(self, item : str):
         if "$" in item:
@@ -17,8 +17,6 @@ class Event:
                 money = int(item[i])
             self._money += money
             self.characterget_money(money)
-        elif "hp" in item:
-            se
         else :
             self._inventory.append(item)
             print(f"{self._name} a ramasse {item}.")
