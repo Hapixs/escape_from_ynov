@@ -24,8 +24,10 @@ un combat va pouvoir commencer :\n''')
                     prompting(f'''Vous avez choisi pour attaquer {self.character._level._attack[int(sel)-1]._name} avec {self.character._level._attack[int(sel)-1]._pts} points.
 Le combat va pouvoir commencer, a votre disposition il y a un dé\n''') 
                     self.attack(player=self.target, possible_choice_pts=self.character._level._attack[int(sel)-1]._pts)  
-                    rand = random.randint(0, len(self.target._level._attack))     
+                    rand = random.randint(0, len(self.target._level._attack))    
+                    # message advaisaire attack
                     self.attack(player=self.character, possible_choice_pts=self.target._level._attack[rand]._pts)
+        # appelle methode victoire 
 
     def decrease_health(self, target : Character, amount : int):
         target._current_hp -= amount
@@ -39,3 +41,5 @@ Le combat va pouvoir commencer, a votre disposition il y a un dé\n''')
         attack_value = roll + possible_choice_pts
         prompting(f"La puissance de l'attaque sera de {roll} + {possible_choice_pts} soit {attack_value} points\n") 
         self.decrease_health(player, amount=attack_value)
+
+    #def methode victoire 
