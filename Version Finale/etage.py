@@ -35,9 +35,9 @@ class Etage:
         else:
             return ""
         
-    def monter_etage(self, pos : Position, name, nbr, template):
+    def monter_etage(self, pos : Position):
         if pos.x == 0 and pos.y == 3:
-            self.i
+            pass
 
     def possible_move(self):
         

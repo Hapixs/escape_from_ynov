@@ -11,7 +11,7 @@ if __name__ == "__main__":
     
     clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
     clear()
-    with open("Version Finale/sprites/GAME_NAME.txt", 'r') as f:
+    with open("./Version Finale/sprites/GAME_NAME.txt", 'r') as f:
         print(f.read())
 
     mon_etage = EtageRDC()
