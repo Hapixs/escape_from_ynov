@@ -6,12 +6,13 @@ from level import B1
 
 class Piece: 
 
-    def __init__(self, name : str, histoire : str = None, event : str = None, combat =False, enemy : Character = None):
+    def __init__(self, name : str, histoire : str = None, event : str = None, combat =False, enemy : Character = None, esca = None):
          self._name = name
          self._histoire = histoire
          self._enemy = enemy
          self._combat = combat
          self.event = event
+         self._esca = esca
 
     def __str__(self) -> str:
         return self._name
@@ -20,6 +21,8 @@ class Piece:
         if self._name == "Esc1":
             prompting(self._histoire)
             self.enter_room()
+        if self._esca != None :
+            self.monter_etage()
         if self._histoire != None:
             prompting(self._histoire)
             if self._combat != None:
@@ -31,3 +34,6 @@ class Piece:
     def enter_room(self):
         os.system("clear||cls")
         self.show_histoire()
+
+    def monter_etage(self):
+        pass

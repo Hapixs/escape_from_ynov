@@ -147,7 +147,7 @@ allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= Tru
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
     Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
-Rendez-vous a l'étage superieur\n''' )
+Rendez-vous a l'étage superieur\n''', esca=True )
 
         
     def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur, Hub, None,Esc1],
