@@ -1,4 +1,6 @@
 from attack import Attack
+from prompting import prompting
+
 class Level ():
     
     def __init__(self, name = "B1", option : str = None, attack : Attack =[]):
@@ -100,6 +102,8 @@ class Accueil (Level):
     def __init__(self,name="Mec de Accueil"):
         self._name = name
         self._attack = ("Passe ton badge",2) + ("Aigri mood",4)
+        
+
     
 
             

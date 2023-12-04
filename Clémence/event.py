@@ -1,4 +1,6 @@
 from character import Character
+from prompting import prompting
+
 class Event:
     
     def __init__(self, event : str, event_type : int = 0, Character : Character = None):
@@ -27,4 +29,4 @@ class Event:
             self.character.get_money(money)
         else :
             self.character._inventory.append(item)
-            print(f"{self.character._name} a ramasse {item}.")
+            prompting(f"{self.character._name} a ramasse {item}.\n")
