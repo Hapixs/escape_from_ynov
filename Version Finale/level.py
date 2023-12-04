@@ -103,6 +103,13 @@ class Accueil (Level):
         self._name = name
         self._attack = [Attack("Passe ton badge",2),Attack("Aigri mood",4)]
         
+class Mentor (Level):
+    
+    def __init__(self,name="Mentor"):
+        self._name = name
+        self._attack = [Attack("Pas l'heure de pause",2),Attack("20eme Piscine",4)]
+    
+        
 
     
 
