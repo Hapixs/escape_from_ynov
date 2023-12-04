@@ -1,11 +1,11 @@
 from dice import Dice
-from level import Level
+from level import B1
 from prompting import prompting
 
 
 class Character:
     
-    def __init__(self, name: str, max_hp: int = 100 , dice= Dice(), inventory = [], money: int = 0, level = Level()):
+    def __init__(self, name: str, max_hp: int = 100 , dice= Dice(), inventory = [], money: int = 0, level = B1()):
         self._name = name
         self._max_hp = max_hp
         self._current_hp = max_hp
@@ -15,7 +15,7 @@ class Character:
         self._level = level
 
     def initiali(self):
-        prompting(f"{self._name} est {self._level._name} avec {self._current_hp} hp\n")
+        prompting(f"{self._name} est en {self._level._name} avec {self._current_hp} hp\n")
 
 
     def is_alive(self):

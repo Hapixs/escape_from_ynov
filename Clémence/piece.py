@@ -5,7 +5,7 @@ from prompting import prompting
 
 class Piece: 
 
-    def __init__(self, name : str, histoire : str = None, event : str = None, combat : Combat = None, enemy : Character = None):
+    def __init__(self, name : str, histoire : str = None, event : str = None, combat =False, enemy : Character = None):
          self._name = name
          self._histoire = histoire
          self._enemy = enemy
@@ -13,7 +13,7 @@ class Piece:
          self.event = event
 
 
-    def get_name(self,):
+    def __str__(self) -> str:
         return self._name
     
     def show_histoire(self):
@@ -26,6 +26,7 @@ class Piece:
                 self._combat.start_attack()
         else:
             prompting(f"Aucune histoire disponible pour la salle {self._name}.")
+            
         
 
     

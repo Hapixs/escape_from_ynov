@@ -9,7 +9,7 @@ from position import Position
 
 
 class Etage: 
-    def __init__(self,name,  nbr, template : Piece =[], position = Position(1,1) ) -> None: 
+    def __init__(self,name,  nbr, template : Piece =[], position = Position(1,2) ) -> None: 
         self._name = name
         self._nbr = nbr
         self._template = template
@@ -27,8 +27,6 @@ class Etage:
     def get_floor(self):
         return self._name
      
-
-    
     def get_room(self, pos : Position):
         # print(pos)
         if pos:
@@ -75,22 +73,22 @@ Carte:
             disable_room = ["", None]
             i = 1
             if not self.get_room(up) in disable_room:
-                print(f"{i} {self.get_room(up)}")
+                prompting(f"{i} {self.get_room(up)}\n")
                 possible_choice.append(str(i))
                 i += 1
                 enable_room.append(up)
             if not self.get_room(right) in disable_room:
-                print(f"{i} {self.get_room(right)}")
+                prompting(f"{i} {self.get_room(right)}\n")
                 possible_choice.append(str(i))
                 i += 1
                 enable_room.append(right)
             if not self.get_room(down) in disable_room:
-                print(f"{i} {self.get_room(down)}")
+                prompting(f"{i} {self.get_room(down)}\n")
                 possible_choice.append(str(i))
                 i += 1
                 enable_room.append(down)
             if not self.get_room(left) in disable_room:
-                print(f"{i} {self.get_room(left)}")
+                prompting(f"{i} {self.get_room(left)}\n")
                 possible_choice.append(str(i))
                 i += 1
                 enable_room.append(left)
@@ -100,6 +98,10 @@ Carte:
         time.sleep(1)
         self._position = enable_room[int(choix) - 1]
         self.get_room(self._position).enter_room()
+        if self.get_room(self._position) == "Esc1":
+            self._nbr +=1
+        
+        
 
     def move_up(self):
         if self._position[0] - 1 < 0:
@@ -129,44 +131,48 @@ Carte:
         else:
             return (self._position[0], self._position[1] - 1)
         
+
+   
+        
+    
+    
+        
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", Character("Eleve",50, 4,[], 0, Level() )) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", True, Character("Eleve",50, 4,[], 0, Level() )) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
     Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
 allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', Character("Mec de l'accueil",50, 4,[], 0, Level() ))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
-ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''')
+ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
     Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
 pour cela il faut y être autorisé
 Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''' )
-    Esc2 = Piece("esc2", '''Les escalier 1 permettent d'aller a tous les étages
-pour cela il faut y être autorisé
-Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
+
         
-    def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur,Esc1, Accueil ,None],
-                     [Hub,Home,Esc2, Portiques]),position = (1,1) ):
+    def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur, Accueil, None,Esc1],
+                                                                       [None, Hub,Home, Portiques]),position = (1,2) ):
         self._template = template
         self._name = name
         self._nbr = nbr
         self._position = position
         
-    
-    
-        
+   
 class Etage1(Etage):
     P101= Piece("P101")
     P105 = Piece("P105")
     P108 = Piece("P108")
     Serveur = Piece("Serv")
     Esc1 = Piece("esc1")
-    Esc2 = Piece("esc2")
+
         
-    def __init__(self, name = "Etage 1", nbr = 1, template = ([P101,Esc1, None ,P105],
-                     [None,Serveur,Esc2, P108])):
+    def __init__(self, name = "Etage 1", nbr = 1, template = ([None,P101,P105,Esc1],
+                                                            [None,None, Serveur, P108]), position = (0,3)):
         self._template = template
         self._name = name
         self._nbr = nbr
+        self._position = position
+
         
 class Etage2(Etage):
     Archi= Piece("Arch")
@@ -174,38 +180,42 @@ class Etage2(Etage):
     Ytrack = Piece("Ytrac")
     wc = Piece(" WC ") 
     Esc1 = Piece("esc1")
-    Esc2 = Piece("esc2")
+
         
-    def __init__(self, name = " Etage 2", nbr = 2, template = ([Archi,Esc1, None ,Leo],
-                     [wc,None,Esc2, Ytrack])):
+    def __init__(self, name = " Etage 2", nbr = 2, template = ([None,wc, None ,Esc1],
+                                                             [None,Archi,Leo, Ytrack]),position = (0,3)):
         self._template = template
         self._name = name
         self._nbr = nbr
+        self._position = position
 
 class Etage3(Etage):
-    Ascenceur= Piece("Asce")
-    Accueil = Piece("Accu")
-    Home = Piece("Home")
-    Portiques = Piece("Port", "Vous êtes à côté des portiques, cette salle est l'endroit où tout le monde se réunit pour manger et jouer au baby, tiens quelqu'un se trouve au fond, il a l'air évasif")
+    Box= Piece("Box ")
+    Souk1 = Piece("Souk")
+    Souk2 = Piece("Souk")
+    Souk3 = Piece("Souk")
     Esc1 = Piece("esc1")
-    Esc2 = Piece("esc2")
+    Robotique = Piece("Robo")
         
-    def __init__(self, name = "Etage 3", nbr = 3, template = ([Ascenceur,Esc1, Accueil ,None],
-                     [None,Home,Esc2, Portiques])):
+    def __init__(self, name = "Etage 3", nbr = 3, template = ([Box,None, Souk1 ,Esc1],
+                                                             [Robotique,Souk3,Souk2, None]), position = (0,3)):
         self._template = template
         self._name = name
         self._nbr = nbr
+        self._position = position
         
 class Etage4(Etage):
-    Ascenceur= Piece("Asce")
-    Accueil = Piece("Accu")
-    Home = Piece("Home")
-    Portiques = Piece("Port", "Vous êtes à côté des portiques, cette salle est l'endroit où tout le monde se réunit pour manger et jouer au baby, tiens quelqu'un se trouve au fond, il a l'air évasif")
+    Ascenceur = Piece("Asce")
+    Admin= Piece("Admi")
+    Python = Piece(" PY ")
     Esc1 = Piece("esc1")
-    Esc2 = Piece("esc2")
+    wc = Piece(" WC ") 
+
         
-    def __init__(self, name = "Etage 4", nbr = 4, template = ([Ascenceur,Esc1, Accueil ,None],
-                     [None,Home,Esc2, Portiques]) ):
+    def __init__(self, name = "Etage 4", nbr = 4, template = ([Ascenceur,Python, Admin ,Esc1],
+                                                                [None,None,None, wc]),  position = (0,3)):
         self._template = template
         self._name = name
         self._nbr = nbr
+        self._position = position
+        

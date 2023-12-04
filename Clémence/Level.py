@@ -87,7 +87,9 @@ class M2 (Level):
             self._attack.append(("Database",6),("Chatgpt", 8))
         else :
             print("Choisit une option")
-                
+            
+            
+
             
             
             

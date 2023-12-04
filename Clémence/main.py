@@ -18,7 +18,7 @@ if __name__ == "__main__":
     name = input()
     joueur = Character(name)
     joueur.initiali()
-    prompting('''L'année va pouvoir commencer, ne pas oublier l'objectif, progresser pour vaincre le boss de Python\n\n''')
+    prompting('''L'année va pouvoir commencer, ne pas oublier l'objectif, progresser pour vaincre le boss de Python\n''')
     mon_etage.possible_move()
 
 
