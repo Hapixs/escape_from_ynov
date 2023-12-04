@@ -3,14 +3,21 @@ from typing import Any
 from piece import Piece 
 from prompting import prompting
 import time
+from character import Character
+from level import Level
 
 class Etage: 
-    def __init__(self,name,  nbr, template : Piece =[], position = (1,1) ) -> None: 
+    def __init__(self,name, nbr, template : Piece, position = (1,1)) -> None: 
         self._name = name
         self._nbr = nbr
         self._template = template
         self._position = position
 
+    def set_nbr(self,nbr):
+        self._nbr = nbr
+
+    def set_joueur(self,joueur):
+        self._joueur = joueur
         
     def show_position(self): 
         print(f"Position actuelle: {self._position}\n") 
@@ -24,12 +31,12 @@ class Etage:
         return self._name
      
         
-    def get_room(self, pos):
-        # print(pos)
+    def get_room(self, pos : tuple):
         if pos:
             return self._template[pos[0]][pos[1]]
         else:
             return ""
+
 
     def possible_move(self):
         
@@ -39,7 +46,7 @@ class Etage:
         left = self.move_left()
         map_str = f"""
 Carte:
-{self.get_floor}
+{self._name}:
 ┌──────────┐──────────┐──────────┐──────────┐
 │          │          │          │          │
 │   {self.get_room((0, 0))}   │   {self.get_room((0, 1))}   │   {self.get_room((0, 2))}   │   {self.get_room((0, 3))}   │
@@ -49,7 +56,6 @@ Carte:
 │   {self.get_room((1, 0))}   │   {self.get_room((1, 1))}   │   {self.get_room((1, 2))}   │   {self.get_room((1, 3))}   │
 │          │          │          │          │
 └──────────┴──────────┴──────────┴──────────┘
-
 """
 
         # Remplacer l'emplacement actuel par une croix
@@ -125,16 +131,16 @@ Carte:
             return (self._position[0], self._position[1] - 1)
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut \n") 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", Character("Mec de l'accueil",50, 4,[], 0, Level() )) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
     Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''')
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', Character("Mec de l'accueil",50, 4,[], 0, Level() ))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''')
     Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
 pour cela il faut y être autorisé
-Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
+Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''' )
     Esc2 = Piece("esc2", '''Les escalier 1 permettent d'aller a tous les étages
 pour cela il faut y être autorisé
 Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
@@ -145,6 +151,8 @@ Trouver le moyen d'y arriver en allant dans les salles d'Ynov\n''')
         self._name = name
         self._nbr = nbr
         self._position = position
+    
+    
         
 class Etage1(Etage):
     P101= Piece("P101")

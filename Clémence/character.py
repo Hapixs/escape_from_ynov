@@ -22,7 +22,7 @@ class Character:
         return self._current_hp > 0   
     
     def get_money(self):
-        prompting(f"{self._name} a actuellement {self._money} $")
+        prompting(f"{self._name} a actuellement {self._money} $\n")
         
     def get_inventory(self):
         prompting(f"{self._name} a actuellement dans son inventaire : ")          

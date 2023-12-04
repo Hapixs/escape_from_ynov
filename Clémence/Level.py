@@ -4,7 +4,10 @@ class Level ():
     def __init__(self, name = "B1", option : str = None, attack : Attack =[]):
         self._name = name
         self._option = option
-        self._attack : attack
+        self._attack = attack
+        
+    def show_name(self):
+        print(f"{self._name}")
         
     
 class B1 (Level):
