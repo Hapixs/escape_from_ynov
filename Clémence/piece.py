@@ -12,7 +12,10 @@ class Piece:
          self._combat = combat
          self.event = event
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ab849ed4afc0a8bfb05d39ad4c6873ad54c1594b
     def __str__(self) -> str:
         return self._name
     
