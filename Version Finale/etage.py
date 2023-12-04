@@ -3,7 +3,7 @@ from typing import Any
 from piece import Piece 
 from prompting import prompting
 import time
-from character import Character
+from character import Csharacter
 from level import B1 , Python, Mentor, Accueil
 from position import Position
 from event import Event
@@ -163,12 +163,14 @@ Rendez-vous a l'étage superieur\n''', esca=True )
         
    
 class Etage1(Etage):
-    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n", Event("P101", 2))
+    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n")
     P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
-                 mais le mentor est contre pour 12min, vous engagez un combat avec un mentor ''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
-    P108 = Piece("P108", "Ici tu trouves npc pour monter en competence")
-    Serveur = Piece("Serv")
-    Esc1 = Piece("esc1")
+                 mais le mentor est contre pour 12min, vous engagez un combat avec un mentor\n ''', combat=True, enemy= Character("Costa", 60, 6, level = Mentor()) )
+    P108 = Piece("P108", "Ici se cache des npc pour monter en competence afin d'être encore plus fort\n")
+    Serveur = Piece("Serv",	'''avec le choix de la spé cyber : acceder aux cameras, augmente tes connaissances et donc ta puissance
+	Il y a aussi une possibilité de trouver récuperer une ram\n''')
+    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
+Rendez-vous a l'étage superieur\n''', esca=True )
 
         
     def __init__(self, name = "Etage 1", nbr = 1, template = ([None,P101,P105,Esc1],
@@ -180,11 +182,14 @@ class Etage1(Etage):
 
         
 class Etage2(Etage):
-    Archi= Piece("Arch")
-    Leo = Piece("Léo ")
-    Ytrack = Piece("Ytrac")
-    wc = Piece(" WC ") 
-    Esc1 = Piece("esc1")
+    Archi= Piece("Arch", "Echanger du matériel contre de l'argent c'est simple ici, bienvenue en archi\n")
+    Leo = Piece('''Léo ", "Dans cette salle on va pas rigoler longtemps, avec les tests de leo, les compétences doublent pour des bonnes réponses
+si jamais la chance se présente il ne faut pas oublier le clavier externe de Léo\n''')
+    Ytrack = Piece("Ytrac", '''Cette salle a beaucou d'importance, pour tout exo rendu a temps il y a une petite surprise
+Vu le nombre d'oublie dans la salle récuperer une souris gaming ne va pas se faire remarquer\n''')
+    wc = Piece(" WC ", "Une envie présente, tu auras la chance de trouver quelque chose ici\n") 
+    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
+Rendez-vous a l'étage superieur\n''', esca=True )
 
         
     def __init__(self, name = " Etage 2", nbr = 2, template = ([None,wc, None ,Esc1],
@@ -195,11 +200,12 @@ class Etage2(Etage):
         self._position = position
 
 class Etage3(Etage):
-    Box= Piece("Box ")
-    Souk1 = Piece("Souk")
-    Souk2 = Piece("Souk")
-    Souk3 = Piece("Souk")
-    Esc1 = Piece("esc1")
+    Box= Piece("Box ", "Un bonheur les oraux mais on a pas toujours le choix, face a un mentor de nouveau\n")
+    Souk1 = Piece("Souk", "C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
+    Souk2 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
+    Souk3 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
+    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
+Rendez-vous a l'étage superieur\n''', esca=True )
     Robotique = Piece("Robo")
         
     def __init__(self, name = "Etage 3", nbr = 3, template = ([Box,None, Souk1 ,Esc1],
@@ -213,8 +219,9 @@ class Etage4(Etage):
     Ascenceur = Piece("Asce")
     Admin= Piece("Admi")
     Python = Piece(" PY ")
-    Esc1 = Piece("esc1")
-    wc = Piece(" WC ") 
+    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
+Rendez-vous a l'étage superieur\n''', esca=True )
+    wc = Piece(" WC ", "Une envie présente, tu auras la chance de trouver quelque chose ici\n") 
 
         
     def __init__(self, name = "Etage 4", nbr = 4, template = ([Ascenceur,Python, Admin ,Esc1],
