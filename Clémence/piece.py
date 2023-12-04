@@ -12,8 +12,7 @@ class Piece:
          self._combat = combat
          self.event = event
 
-
-    def get_name(self,):
+    def __str__(self) -> str:
         return self._name
     
     def show_histoire(self):

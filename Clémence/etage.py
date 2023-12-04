@@ -27,8 +27,6 @@ class Etage:
     def get_floor(self):
         return self._name
      
-
-    
     def get_room(self, pos : Position):
         # print(pos)
         if pos:
