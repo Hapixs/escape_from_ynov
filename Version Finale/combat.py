@@ -12,7 +12,7 @@ class Combat:
         self.room = room
     
     def start_attack(self):
-        prompting(f'''Vous etrez dans {self.room}, face a vous {self.target._name}, avec {self.target._current_hp}HP,
+        prompting(f'''Vous entrez dans {self.room}, face a vous {self.target._name}, avec {self.target._current_hp}HP,
 un combat va pouvoir commencer :\n\n''')
         while self.character.is_alive() and self.target.is_alive():
             for i in range(0, len(self.character._level._attack)) :

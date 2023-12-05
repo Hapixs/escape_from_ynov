@@ -3,7 +3,7 @@ from typing import Any
 from piece import Piece 
 from prompting import prompting
 import time
-from character import Csharacter
+from character import Character
 from level import B1 , Python, Mentor, Accueil
 from position import Position
 from event import Event
