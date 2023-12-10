@@ -16,7 +16,7 @@ class B1 (Level):
         
     def __init__(self, name = "B1"):
         self._name = name
-        self._attack= [Attack("Hello World!", 2),Attack("Piscine golang", 4)]
+        self._attack= [Attack("Hello World!", 2),Attack("Piscine golang", 100)]
         
 class B2 (Level):
         
@@ -29,20 +29,20 @@ class B3 (Level):
     def __init__(self, name = "B3", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("POO python", 3),Attack("New VM", 3)]
+        self._attack = [Attack("POO python", 5),Attack("New VM", 7)]
         
         
     def setAttack(self):
         if self._option == "Hardware" :
-            self._attack.append("Cable hdmi", 5)
+            self._attack.append("Cable hdmi", 10)
         elif self._option == "Robotique" : 
-            self._attack.append("Arduino", 5)
+            self._attack.append("Arduino", 10)
         elif self._option == "Web" :
-            self._attack.append("css", 5)
+            self._attack.append("css", 10)
         elif self._options == "Cyber" :
-            self._attack.append("nmap", 5)
+            self._attack.append("nmap", 10)
         elif self._options == "Data IA" :
-            self._attack.append("Database", 5)
+            self._attack.append("Database", 10)
         else :  
             print("Choisit une option")
                 
@@ -51,20 +51,20 @@ class M1 (Level):
     def __init__(self, name = "M1", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("git branch", 3),Attack("Eloquence", 5)]
+        self._attack = [Attack("git branch", 7),Attack("Eloquence", 10)]
         
         
     def setAttack(self):
         if self._options == "Hardware" :
-            self._attack.append("Cable hdmi", 6)
+            self._attack.append("Cable hdmi", 11)
         elif self._options == "Robotique" :
-            self._attack.append( "Arduino", 6)
+            self._attack.append( "Arduino", 11)
         elif self._options == "Web" :
-            self._attack.append("css", 6)
+            self._attack.append("css", 11)
         elif self._options == "Cyber" :
-            self._attack.append("nmap", 6)
+            self._attack.append("nmap", 11)
         elif self._options == "Data IA" :
-            self._attack.append("Database", 6)
+            self._attack.append("Database", 11)
         else :
             print("Choisit une option")
 
@@ -73,20 +73,20 @@ class M2 (Level):
     def __init__(self, name = "M2", option = "Hardware"):
         self._name = name
         self._option = option
-        self._attack = [Attack("Managment",4),Attack("Jet de pc",4)]
+        self._attack = [Attack("Managment",10),Attack("Jet de pc",11)]
         
             
     def setAttack(self):
         if self._options == "Hardware" :
-            self._attack.append(("Cable hdmi", 6), ("CPU", 8))
+            self._attack.append(("Cable hdmi", 14), ("CPU", 15))
         elif self._options == "Robotique" :
-            self._attack.append(("Arduino" , 6), ("Wall-e", 8))
+            self._attack.append(("Arduino" , 14), ("Wall-e", 15))
         elif self._options == "Web" :
-            self._attack.append(("css",6),("html", 8))
+            self._attack.append(("css",14),("html", 15))
         elif self._options == "Cyber" :
-            self._attack.append(("nmap",6),("Hacking", 8))
+            self._attack.append(("nmap",14),("Hacking", 15))
         elif self._options == "Data IA" :
-            self._attack.append(("Database",6),("Chatgpt", 8))
+            self._attack.append(("Database",14),("Chatgpt", 15))
         else :
             print("Choisit une option")
             
@@ -94,7 +94,7 @@ class Python (Level):
     
     def __init__(self,name="Prof de Python"):
         self._name = name
-        self._attack = [Attack("Anti Chatgpt",10),Attack("Projet POO",10)]
+        self._attack = [Attack("Anti Chatgpt",15),Attack("Projet POO",18)]
     
 
 class Accueil (Level):
@@ -107,7 +107,7 @@ class Mentor (Level):
     
     def __init__(self,name="Mentor"):
         self._name = name
-        self._attack = [Attack("Pas l'heure de pause",2),Attack("20eme Piscine",4)]
+        self._attack = [Attack("Pas l'heure de pause",5),Attack("20eme Piscine",7)]
     
         
 

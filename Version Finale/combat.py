@@ -11,7 +11,7 @@ class Combat:
         self.target = target 
         self.room = room
     
-    def start_attack(self):
+    def start_attack(self) :
         prompting(f'''Vous etrez dans {self.room}, face a vous {self.target._name}, avec {self.target._current_hp}HP,
 un combat va pouvoir commencer :\n\n''')
         while self.character.is_alive() and self.target.is_alive():
@@ -31,7 +31,15 @@ il manque le lancer de dé\n''')
                         prompting(f"{self.target._name} attaque avec {self.target._level._attack[rand]._name} qui fait {self.target._level._attack[rand]._pts} degat\n")
                         self.attack(player=self.character, possible_choice_pts=self.target._level._attack[rand]._pts)
                         self.character.show_HP()
-        self.victoire(self.target)
+        if self.character.is_alive() :
+            if self.target._name == "Mec de l'accueil" :
+                self.character = True
+            self.victoire(self.target)
+            return True
+        else : 
+            self.defete(self.target)
+            return False
+
 
     def decrease_health(self, target : Character, amount : int):
         target._current_hp -= amount
@@ -47,3 +55,7 @@ il manque le lancer de dé\n''')
     def victoire(self, target : Character):
         if not target.is_alive() :
             prompting(f"\nFélicitation! Victoire contre {self.target._name}\n ")
+
+    def defete(self, target : Character) :
+        if target.is_alive() :
+            prompting(f"\nMalheuresement tu a perdu face a {self.target._name} !\n GAME OVER \n")

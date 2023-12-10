@@ -1,12 +1,13 @@
-
 from typing import Any
 from piece import Piece 
 from prompting import prompting
 import time
 from character import Character
-from level import B1 , Python, Mentor, Accueil
+from level import B1 , Python, Mentor, Accueil , M2
 from position import Position
 from event import Event
+from action import Portiques
+import os
 
 
 class Etage: 
@@ -39,7 +40,7 @@ class Etage:
         if pos.x == 0 and pos.y == 3:
             pass
 
-    def possible_move(self):
+    def possible_move(self, mon_etage :str, perso: Character):
         
         up = self.move_up()
         right = self.move_right()
@@ -73,7 +74,7 @@ Carte:
         possible_choice = []
         choix = ""
         while choix not in possible_choice:
-            prompting(f"Vous etes dans la salle :{self.get_room(self._position)}\n")
+            prompting(f"Vous etes dans la salle : {self.get_room(self._position)}\n")
             prompting("Déplacements possibles :\n")
             disable_room = ["", None]
             i = 1
@@ -102,9 +103,7 @@ Carte:
         prompting(f"Votre choix: {self.get_room(enable_room[int(choix) - 1])}\n")
         time.sleep(1)
         self._position = enable_room[int(choix) - 1]
-        self.get_room(self._position).enter_room()
-        if self.get_room(self._position) == "Esc1":
-            self._nbr +=1
+        self.get_room(self._position).enter_room(mon_etage, perso)
         
         
 
@@ -136,6 +135,21 @@ Carte:
         else:
             return (self._position[0], self._position[1] - 1)
         
+    def monter_etage(self, piece, perso):
+        os.system("clear||cls")
+        prompting(piece._histoire)
+        etage = [EtageRDC(), Etage1(), Etage2(), Etage3(), Etage4()]
+        a = 1
+        for i in etage :
+            prompting(f'{a} {i._name}\n') 
+            a += 1
+        mon_etage=etage[int(input())-1]
+        if mon_etage._name == "Etage 4" :
+            prompting("Impossible d'y accèder une barrière te bloque\n")
+            time.sleep(3)
+            self.monter_etage(piece, perso)
+        mon_etage.possible_move(mon_etage, perso)
+        
 
    
         
@@ -143,15 +157,15 @@ Carte:
     
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve",50, 4, level=Python())) 
-    Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n")
-    Accueil = Piece("Accu" , ''' L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil() ))
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2())) 
+    Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n", asce=True)
+    Accueil = Piece("Accu" , '''L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil()))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
-ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', "Vous allez pouvoir jouer avec votre dé, si c'est pair vous pourrez acceder aux autres étages")
-    Esc1 = Piece("esc1",'''Les escalier 1 permettent d'aller a tous les étages
-Rendez-vous a l'étage superieur\n''', esca=True )
+ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', action = Portiques)
+    Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
+Choisier votre étage:\n''', esca=True )
 
         
     def __init__(self, name = "Rez de Chaussée", nbr = 0 , template = ([Ascenceur, Hub, None,Esc1],
@@ -165,10 +179,11 @@ Rendez-vous a l'étage superieur\n''', esca=True )
 class Etage1(Etage):
     P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n", Event("P101", 2))
     P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
-                 mais le mentor est contre pour 12min, vous engagez un combat avec un mentor ''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
+mais le mentor est contre pour 12min, vous engagez un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
     P108 = Piece("P108", "Ici tu trouves npc pour monter en competence")
     Serveur = Piece("Serv")
-    Esc1 = Piece("esc1")
+    Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
+Choisier votre étage:\n''', esca=True )
 
         
     def __init__(self, name = "Etage 1", nbr = 1, template = ([None,P101,P105,Esc1],
@@ -187,7 +202,7 @@ class Etage2(Etage):
     Esc1 = Piece("esc1")
 
         
-    def __init__(self, name = " Etage 2", nbr = 2, template = ([None,wc, None ,Esc1],
+    def __init__(self, name = "Etage 2", nbr = 2, template = ([None,wc, None ,Esc1],
                                                              [None,Archi,Leo, Ytrack]),position = (0,3)):
         self._template = template
         self._name = name
@@ -218,7 +233,7 @@ class Etage4(Etage):
 
         
     def __init__(self, name = "Etage 4", nbr = 4, template = ([Ascenceur,Python, Admin ,Esc1],
-                                                                [None,None,None, wc]),  position = (0,3)):
+                                                                [None,None,None, wc]),  position = (0,0)):
         self._template = template
         self._name = name
         self._nbr = nbr

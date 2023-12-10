@@ -3,37 +3,41 @@ from combat import Combat
 from character import Character
 from prompting import prompting
 from level import B1
+from etage import *
 
 class Piece: 
 
-    def __init__(self, name : str, histoire : str = None, event : str = None, combat =False, enemy : Character = None, esca = None):
+    def __init__(self, name : str, histoire : str = None, event : str = None, combat = None, enemy : Character = None, esca = None, asce = None, action = None):
          self._name = name
          self._histoire = histoire
          self._enemy = enemy
          self._combat = combat
          self.event = event
          self._esca = esca
+         self._asce = asce
+         self._action = action
 
     def __str__(self) -> str:
         return self._name
     
-    def show_histoire(self):
-        if self._name == "Esc1":
-            prompting(self._histoire)
-            self.enter_room()
+    def show_histoire(self, mon_etage : str, perso : Character):
         if self._esca != None :
-            self.monter_etage()
+            mon_etage.monter_etage(self, perso)
         if self._histoire != None:
             prompting(self._histoire)
-            if self._combat != None:
-                perso = Character("salim", level=B1())
-                Combat(character=perso,target=self._enemy, room= self._name).start_attack()
         else:
-            prompting(f"Aucune histoire disponible pour la salle {self._name}.")
+            prompting(f"Aucune histoire disponible pour la salle {self._name}.")    
+        if self._action != None :
+            self._action.action(self="",perso=perso,mon_etage=mon_etage)
+        if self._combat != None:
+            result = Combat(character=perso,target=self._enemy, room= self._name).start_attack()
+            if result :
+               mon_etage.possible_move(mon_etage, perso)
+        if self._combat == None :
+            mon_etage.possible_move(mon_etage, perso)
             
-    def enter_room(self):
+    def enter_room(self, mon_etage :str, perso : Character):
         os.system("clear||cls")
-        self.show_histoire()
+        self.show_histoire(mon_etage, perso)
 
-    def monter_etage(self):
-        pass
+

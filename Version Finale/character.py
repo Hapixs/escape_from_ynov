@@ -12,6 +12,7 @@ class Character:
         self._inventory = inventory
         self._money = money
         self._level = level
+        self._accueil = False
 
     def initiali(self):
         prompting(f"{self._name} est en {self._level._name} avec {self._current_hp} hp\n")

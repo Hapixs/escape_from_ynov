@@ -1,6 +1,6 @@
 import os
 from character import Character
-from etage import EtageRDC, Etage1, Etage2, Etage3, Etage4
+from etage import EtageRDC
 from prompting import prompting
 from level import B1
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     joueur = Character(name, level= B1())
     joueur.initiali()
     prompting('''L'année va pouvoir commencer, ne pas oublier l'objectif, progresser pour vaincre le boss de Python\n''')
-    mon_etage.possible_move()
+    mon_etage.possible_move(mon_etage, joueur)
 
 
 
