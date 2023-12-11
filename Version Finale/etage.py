@@ -8,7 +8,7 @@ from position import Position
 from event import Event
 from action import Portiques, Ascenceur
 import os
-
+from colorama import *
 
 class Etage: 
     def __init__(self,name,  nbr, template : Piece =[], position = Position(1,2) ) -> None: 
@@ -42,7 +42,7 @@ class Etage:
         right = self.move_right()
         down = self.move_down()
         left = self.move_left()
-        map_str = f"""
+        map_str = Fore.BLUE + Style.BRIGHT +f"""
 Carte:
 {self.get_floor()}
 ┌──────────┐──────────┐──────────┐──────────┐
@@ -65,7 +65,7 @@ Carte:
 
         # Afficher la carte mise à jour
         print(map_str)
-
+        print(Style.RESET_ALL)
         enable_room = []
         possible_choice = []
         choix = ""
