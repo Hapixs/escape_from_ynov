@@ -33,10 +33,17 @@ Les contraintes rencontrées lors de la conception de ces objectifs sont nombreu
 
 ### Déroulement du jeu
 
-Pour démarrer le jeu, il faut se rendre sur le terminal en se placant dans le dossier escape_from_ynov/Version Finale puis utiliser la commande
+Pour démarrer le jeu, il faut se rendre sur le terminal en se placant dans le dossier escape_from_ynov/Version Finale.
+Installer colorama:
+```powershell 
+pip install colorama
+```
+Utiliser la commande pour commencer :
 ```powershell 
 python main.py
 ```
-Ainsi le jeu commence, tout d'abord par une petite introduction. Ensuite on eut choisir le nom du personnage avant de se retrouver dans la salle Home.
+
+Ainsi le jeu commence, tout d'abord par une petite introduction. Ensuite on peut choisir le nom du personnage avant de se retrouver dans la salle Home.
 A partir de la, on peut voir des directions a choisir avec une cartes au dessus.
-Il y a différentes salles pour différentes raisons : combats, recherche d'objet, ressources d'énergie...
+Il y a différentes salles pour différentes raisons : combats, recherches d'objet, ressources d'énergie...
+Le but étant de parcourir tous les niveaux, jusqu'au 4eme étage pour trouver Monsieur Ladrat.
