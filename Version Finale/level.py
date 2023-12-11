@@ -108,7 +108,13 @@ class Mentor (Level):
     def __init__(self,name="Mentor"):
         self._name = name
         self._attack = [Attack("Pas l'heure de pause",5),Attack("20eme Piscine",7)]
+
+class Directeur (Level):
     
+    def __init__(self,name="Directeur"):
+        self._name = name
+        self._attack = [Attack("-7 500$",20),Attack("Redoublement",10)]
+
         
 
     

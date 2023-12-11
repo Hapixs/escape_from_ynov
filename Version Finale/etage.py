@@ -3,7 +3,7 @@ from piece import Piece
 from prompting import prompting
 import time
 from character import Character
-from level import B1 , Python, Mentor, Accueil , M2
+from level import B1 , Python, Mentor, Accueil , M2, Directeur
 from position import Position
 from event import Event
 from action import Portiques, Ascenceur
@@ -228,7 +228,7 @@ Choisie votre étage:\n''', esca=True )
         
 class Etage4(Etage):
     Ascenceur = Piece("Asce")
-    Admin= Piece("Admi", )
+    Admin= Piece("Admi", '''La fin du jeu approche avant d'aller voir le Boss du jeu, le directeur veut une discution assez conflictuelle, nouveau combat !''', combat=True, enemy= Character("Directeur", 100, 6, Directeur()))
     Python = Piece(" PY ", '''L'heure est venu, le combat le plus important est maintenant, il faut tout donner. 
 Monsieur Ladrat, le prof de python est face a toi, il risque de te donner une bonne lecon sauf si tu lui en donne une... ''', combat= True,enemy= Character("Monsieur Ladrat", 200, 6, Python()))
     wc = Piece(" WC ", "Une envie présente, tu auras la chance de trouver quelque chose ici\n") 
