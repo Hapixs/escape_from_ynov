@@ -6,7 +6,7 @@ from character import Character
 from level import B1 , Python, Mentor, Accueil , M2
 from position import Position
 from event import Event
-from action import Portiques
+from action import Portiques, Ascenceur
 import os
 
 
@@ -36,10 +36,6 @@ class Etage:
         else:
             return ""
         
-    def monter_etage(self, pos : Position):
-        if pos.x == 0 and pos.y == 3:
-            pass
-
     def possible_move(self, mon_etage :str, perso: Character):
         
         up = self.move_up()
@@ -147,18 +143,19 @@ Carte:
         if mon_etage._name == "Etage 4" :
             prompting("Impossible d'y accèder une barrière te bloque\n")
             time.sleep(3)
-            self.monter_etage(piece, perso)
-        mon_etage.possible_move(mon_etage, perso)
+            self.monter_etage(piece, perso=perso)
+        mon_etage.possible_move(mon_etage= mon_etage,perso= perso)
         
-
-   
+    def acse(self, perso) :
+        mon_etage = Etage4()
+        mon_etage.possible_move(mon_etage=mon_etage,perso= perso)
         
     
     
         
 class EtageRDC(Etage):
     Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2())) 
-    Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n", asce=True)
+    Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n", asce=True, action= Ascenceur)
     Accueil = Piece("Accu" , '''L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
 allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil()))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")

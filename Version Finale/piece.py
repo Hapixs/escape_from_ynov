@@ -26,15 +26,17 @@ class Piece:
         if self._histoire != None:
             prompting(self._histoire)
         else:
-            prompting(f"Aucune histoire disponible pour la salle {self._name}.")    
+            prompting(f"Aucune histoire disponible pour la salle {self._name}.")
+        if self._asce != None :
+            self._action.action(perso=perso, mon_etage=mon_etage)
         if self._action != None :
-            self._action.action(self="",perso=perso,mon_etage=mon_etage)
+            self._action.action(perso=perso,mon_etage=mon_etage)
         if self._combat != None:
             result = Combat(character=perso,target=self._enemy, room= self._name).start_attack()
             if result :
-               mon_etage.possible_move(mon_etage, perso)
+               mon_etage.possible_move(mon_etage=mon_etage, perso= perso)
         if self._combat == None :
-            mon_etage.possible_move(mon_etage, perso)
+            mon_etage.possible_move(mon_etage=mon_etage, perso=perso)
             
     def enter_room(self, mon_etage :str, perso : Character):
         os.system("clear||cls")

@@ -33,7 +33,7 @@ il manque le lancer de dé\n''')
                         self.character.show_HP()
         if self.character.is_alive() :
             if self.target._name == "Mec de l'accueil" :
-                self.character = True
+                self.character._accueil = True
             self.victoire(self.target)
             return True
         else : 
