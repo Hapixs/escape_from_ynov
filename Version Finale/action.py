@@ -5,11 +5,8 @@ from prompting import prompting
 from etage import *
 
 class Action:
-    
     def __init__(self) -> None:
         pass
-    
-
 
     def pick(self, item : str):
         if "$" in item:
@@ -19,9 +16,9 @@ class Action:
             self.getmoney(money)
         else :
             self._inventory.append(item)
-            print(f"{self._name} a ramasse {item}.")
+            print(f"tu as ramassé {item}.")
 
-class Portiques(Action) :
+class Portiques(Action):
 
     def __init__(self) -> None:
         super().__init__()     
