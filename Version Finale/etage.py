@@ -192,7 +192,7 @@ Choisie votre étage:\n''', esca=True )
 
         
 class Etage2(Etage):
-    Archi= Piece("Arch", "Echanges du matériel contre de l'argent c'est simple ici, bienvenue en archi\n")
+    Archive= Piece("Arch", "Echanges du matériel contre de l'argent c'est simple ici, bienvenue aux archives\n")
     Leo = Piece('''Léo ", "Dans cette salle on va pas rigoler longtemps, avec les tests de leo, les compétences doublent pour des bonnes réponses
 si jamais la chance se présente il ne faut pas oublier le clavier externe de Léo\n''')
     Ytrack = Piece("Ytrac", '''Cette salle a beaucou d'importance, pour tout exo rendu a temps il y a une petite surprise
@@ -202,7 +202,7 @@ Vu le nombre d'oublie dans la salle récuperer une souris gaming ne va pas se fa
 Choisie votre étage:\n''', esca=True )
         
     def __init__(self, name = "Etage 2", nbr = 2, template = ([None,wc, None ,Esc1],
-                                                             [None,Archi,Leo, Ytrack]),position = (0,3)):
+                                                             [None,Archive,Leo, Ytrack]),position = (0,3)):
         self._template = template
         self._name = name
         self._nbr = nbr
