@@ -179,7 +179,7 @@ class Etage1(Etage):
     P105 = Piece("P105", '''Aie aie aie, tu es arrivé en retard, tu voulais signer sur SWS 
 mais le mentor est contre pour 12min, tu engages un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
     P108 = Piece("P108", "Ici tu trouves Théo , il va te faire un petit cadeau pour l'avoir aider dans son projet")
-    Serveur = Piece("Serv", "Si l'option que tu as choisi est la cybersécurité tu es chanceuse, tu vas pouvoir entrer et récuperer des objets interresants")
+    Serveur = Piece("Serv", "Si l'option que tu as choisi est la cybersécurité tu es chanceux, tu vas pouvoir entrer et récuperer des objets interresants")
     Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
 Choisie votre étage:\n''', esca=True )
 
@@ -210,7 +210,7 @@ Choisie votre étage:\n''', esca=True )
         self._position = position
 
 class Etage3(Etage):
-    Box= Piece("Box ", "Un bonheur les oraux mais on a pas toujours le choix, face a un mentor de nouveau\n")
+    Box= Piece("Box ", "Un bonheur les oraux mais on a pas toujours le choix, face a un mentor de nouveau\n", )
     Souk1 = Piece("Souk", "C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
     Souk2 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
     Souk3 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
