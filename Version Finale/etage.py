@@ -154,10 +154,10 @@ Carte:
     
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2())) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2(), xp = 60)) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n", asce=True, action= Ascenceur)
     Accueil = Piece("Accu" , '''L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil()))
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil(), xp = 40))
     Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
     Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
 ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', action = Portiques)
@@ -176,7 +176,7 @@ Choisier votre étage:\n''', esca=True )
 class Etage1(Etage):
     P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n")
     P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
-mais le mentor est contre pour 12min, vous engagez un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
+mais le mentor est contre pour 12min, vous engagez un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor() ,xp=50))
     P108 = Piece("P108", "Ici tu trouves npc pour monter en competence")
     Serveur = Piece("Serv")
     Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages

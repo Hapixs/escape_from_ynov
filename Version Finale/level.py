@@ -7,21 +7,45 @@ class Level ():
         self._name = name
         self._option = option
         self._attack = attack
+        self._xp_requiered = 0
         
     def show_name(self):
         print(f"{self._name}")
-        
+
+    def get_xp_manquant(self, perso):
+        if perso._level._name == "B1" :
+            return B2()._xp_requiered
+        elif perso._level._name == "B2" :
+            return B3()._xp_requiered
+        elif perso._level._name == "B3" :
+            return M1()._xp_requiered
+        elif perso._level._name == "M1" :
+            return M2()._xp_requiered
+
+    def levelup(self, perso) :
+        if perso._level._name == "B1" :
+            perso._level = B2()
+        elif perso._level._name == "B2" :
+            perso._level = B3()
+        elif perso._level._name == "B3" :
+            perso._level = M1()
+        elif perso._level._name == "M1" :
+            perso._level = M2()
+        perso._xp = 0
+        perso._current_hp = 100
     
 class B1 (Level):
         
     def __init__(self, name = "B1"):
         self._name = name
+        self._xp_requiered = 0
         self._attack= [Attack("Hello World!", 2),Attack("Piscine golang", 100)]
         
 class B2 (Level):
         
     def __init__(self, name = "B2"):
         self._name = name
+        self._xp_requiered = 100
         self._attack = [Attack("cat file.txt", 3),Attack("git push",5)]
             
 class B3 (Level):
@@ -29,6 +53,7 @@ class B3 (Level):
     def __init__(self, name = "B3", option = "Hardware"):
         self._name = name
         self._option = option
+        self._xp_requiered = 250
         self._attack = [Attack("POO python", 5),Attack("New VM", 7)]
         
         
@@ -51,6 +76,7 @@ class M1 (Level):
     def __init__(self, name = "M1", option = "Hardware"):
         self._name = name
         self._option = option
+        self._xp_requiered = 500
         self._attack = [Attack("git branch", 7),Attack("Eloquence", 10)]
         
         
@@ -73,6 +99,7 @@ class M2 (Level):
     def __init__(self, name = "M2", option = "Hardware"):
         self._name = name
         self._option = option
+        self._xp_requiered = 1000
         self._attack = [Attack("Managment",10),Attack("Jet de pc",11)]
         
             

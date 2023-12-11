@@ -32,7 +32,7 @@ class Piece:
         if self._action != None :
             self._action.action(perso=perso,mon_etage=mon_etage)
         if self._combat != None:
-            result = Combat(character=perso,target=self._enemy, room= self._name).start_attack()
+            result = Combat(character=perso,target=self._enemy, room= self._name).start_attack(perso)
             if result :
                mon_etage.possible_move(mon_etage=mon_etage, perso= perso)
         if self._combat == None :
