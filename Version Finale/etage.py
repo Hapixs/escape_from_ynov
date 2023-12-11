@@ -210,7 +210,7 @@ Choisie votre étage:\n''', esca=True )
         self._position = position
 
 class Etage3(Etage):
-    Box= Piece("Box ", "Un bonheur les oraux mais on a pas toujours le choix, face a un mentor de nouveau\n", )
+    Box= Piece("Box ", "Un bonheur les oraux mais on a pas toujours le choix, face a un mentor de nouveau\n", combat=True, enemy= Character("Valentin", 60, 6, Mentor()) )
     Souk1 = Piece("Souk", "C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
     Souk2 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
     Souk3 = Piece("Souk","C'est le basard mais au moins il y a des chances de trouver quelque chose d'interéssant\n")
@@ -230,7 +230,7 @@ class Etage4(Etage):
     Ascenceur = Piece("Asce")
     Admin= Piece("Admi", )
     Python = Piece(" PY ", '''L'heure est venu, le combat le plus important est maintenant, il faut tout donner. 
-Geoffrey Ladrat, le prof de python est face a toi, il risque de te donner une bonne lecon sauf si tu lui en donne une... ''')
+Monsieur Ladrat, le prof de python est face a toi, il risque de te donner une bonne lecon sauf si tu lui en donne une... ''', combat= True,enemy= Character("Monsieur Ladrat", 200, 6, Python()))
     wc = Piece(" WC ", "Une envie présente, tu auras la chance de trouver quelque chose ici\n") 
     Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
 Choisie votre étage:\n''', esca=True )
