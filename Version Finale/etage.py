@@ -154,14 +154,13 @@ Carte:
     
         
 class EtageRDC(Etage):
-    Hub = Piece("Hub ", "Tu viens d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2())) 
+    Hub = Piece("Hub ", "Vous venez d'arriver dans le Hub, ici on peut se battre contre un autre éleve\n", combat = True,enemy= Character("Eleve presantant son projet de fin d'etude",50, 4, level=M2(), xp = 60)) 
     Ascenceur= Piece("Asce", "Sans la carte d'acces on ne peut pas prendre l'ascenceur\n", asce=True, action= Ascenceur)
     Accueil = Piece("Accu" , '''L'accueil est le premier lieu ou nous arrivons pour allez dans le batiment, 
-va voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil()))
-    Home = Piece("Home", '''Le premier endroit ou tu mettez les pieds,
-rien ne se passe mais les autres salles vont être intéressantes.\n''')
-    Portiques = Piece("Port", '''J'espere que tu as de la chance, 
-ou sinon que tu as trouver ce qu'il faut pour passer facilemet...\n''', action = Portiques)
+allez voir le mec de l'accueil, qui sait ce qu'il va se passer\n''', combat= True, enemy= Character("Mec de l'accueil",50, 4,level=Accueil(), xp = 40))
+    Home = Piece("Home", "Vous venez de faire vos premier pas dans Ynov, a vous de jouer\n")
+    Portiques = Piece("Port", '''J'espere que vous avez de la chance, 
+ou sinon que vous avez trouver ce qu'il faut pour passer facilemet...\n''', action = Portiques)
     Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
 Choisie votre étage:\n''', esca=True )
 
@@ -175,11 +174,11 @@ Choisie votre étage:\n''', esca=True )
         
    
 class Etage1(Etage):
-    P101= Piece("P101", "Ici tu as la possibilité de demonter pc pour voler des composant pour hardware\n")
-    P105 = Piece("P105", '''Aie aie aie, tu es arrivé en retard, tu voulais signer sur SWS 
-mais le mentor est contre pour 12min, tu engages un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor()) )
-    P108 = Piece("P108", "Ici tu trouves Théo , il va te faire un petit cadeau pour l'avoir aider dans son projet")
-    Serveur = Piece("Serv", "Si l'option que tu as choisi est la cybersécurité tu es chanceux, tu vas pouvoir entrer et récuperer des objets interresants")
+    P101= Piece("P101", "Ici vous avez la possibilité de demonter pc pour voler des composant pour hardware\n")
+    P105 = Piece("P105", '''Aie aie aie, vous êtes arrivez en retard, vous voulez signez sur SWS 
+mais le mentor est contre pour 12min, vous engagez un combat avec un mentor \n''', combat=True, enemy= Character("Costa", 60, 6, Mentor() ,xp=50))
+    P108 = Piece("P108", "Ici tu trouves npc pour monter en competence")
+    Serveur = Piece("Serv")
     Esc1 = Piece("Esc ",'''Les escalier permettent d'aller a tous les étages
 Choisie votre étage:\n''', esca=True )
 

@@ -11,7 +11,7 @@ class Combat:
         self.target = target 
         self.room = room
     
-    def start_attack(self) :
+    def start_attack(self, perso) :
         prompting(f'''Vous etrez dans {self.room}, face a vous {self.target._name}, avec {self.target._current_hp}HP,
 un combat va pouvoir commencer :\n\n''')
         while self.character.is_alive() and self.target.is_alive():
@@ -35,6 +35,11 @@ il manque le lancer de dé\n''')
             if self.target._name == "Mec de l'accueil" :
                 self.character._accueil = True
             self.victoire(self.target)
+            self.character._xp += self.target._xp
+            self.target._xp = 0
+            prompting(f'Tu a gagné {self.character._xp}xp\nIl te manque {self.character._level.get_xp_manquant(perso)-self.character._xp}xp pour passer au niveau suivant')
+            if self.character._level.get_xp_manquant(perso)-self.character._xp <= 0 :
+                self.character._level.levelup(perso)
             return True
         else : 
             self.defete(self.target)

@@ -4,7 +4,7 @@ from prompting import prompting
 
 class Character:
     
-    def __init__(self, name: str, max_hp: int = 100 , dice= 6, inventory = [], money: int = 0, level = Level()):
+    def __init__(self, name: str, max_hp: int = 100 , dice= 6, inventory = [], money: int = 0, level = Level(), xp : int = 0):
         self._name = name
         self._max_hp = max_hp
         self._current_hp = max_hp
@@ -14,6 +14,7 @@ class Character:
         self._level = level
         self._accueil = False
         self._asce = False
+        self._xp = xp
 
     def initiali(self):
         prompting(f"{self._name} est en {self._level._name} avec {self._current_hp} hp\n")
